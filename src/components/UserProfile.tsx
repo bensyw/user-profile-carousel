@@ -1,9 +1,9 @@
-import React from 'react'
-import User from '../types/User'
+import React from 'react';
+import User from '../types/User';
 
 interface UserProfileProps {
     user: User
-}
+};
 
 export const UserProfile: React.FunctionComponent<UserProfileProps> = ({ user }) => {
     return (
@@ -31,5 +31,5 @@ export const UserProfile: React.FunctionComponent<UserProfileProps> = ({ user })
             </ul>
 
         </div>
-    )
-}
+    );
+};

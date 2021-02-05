@@ -1,32 +1,38 @@
-import axios from 'axios'
+import axios from 'axios';
 import { UserProfile } from "./UserProfile";
-import User from '../types/User'
-import React, { useState, useEffect } from 'react'
-import { Pagination } from '@material-ui/lab';
+import { ProfileStepper } from "./ProfileStepper"
+import User from '../types/User';
+import React, { useState, useEffect } from 'react';
 
 export const Container: React.FunctionComponent = () => {
 
-    const [user, setuser] = useState<User[]>([]);
+    const [user, setUser] = useState<User[]>([]);
     const [index, setIndex] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchUser = async () => {
             const result = await axios('https://jsonplaceholder.typicode.com/users');
-            setuser(result.data);
-            setIsLoading(false)
+            setUser(result.data);
+            setIsLoading(false);
         }
         fetchUser();
-    }, [])
+    }, []);
 
-    const handleChangePage = (event: object, page: number) => {
-        setIndex(page - 1);
+    const handleNextOnClick = () => {
+        const newIndex = index + 1;
+        setIndex(newIndex);
+    }
+
+    const handleBackOnClick = () => {
+        const newIndex = index - 1;
+        setIndex(newIndex);
     }
 
     return (
         <div>
             {isLoading ? null : <UserProfile user={user[index]} />}
-            <Pagination count={user.length} color="primary" showFirstButton showLastButton onChange={handleChangePage} />
+            <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={user.length} activeStep={index} />
         </div>
     )
 }
