@@ -11,17 +11,21 @@ interface ProfileStepperProps {
 };
 
 const nextBottonStyle: React.CSSProperties = {
-    position: "fixed",
+    position: "absolute",
     top: "50%",
     right: "10%",
-    color: "white"
+    color: "white",
+    transform: "-50%",
+    msTransform: "-50%"
 };
 
 const backBottonStyle: React.CSSProperties = {
-    position: "fixed",
+    position: "absolute",
     top: "50%",
     left: "10%",
-    color: "white"
+    color: "white",
+    transform: "-50%",
+    msTransform: "-50%",
 };
 
 export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ handleNextOnClick, handleBackOnClick, steps, activeStep }) => {

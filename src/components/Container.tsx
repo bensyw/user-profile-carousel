@@ -32,7 +32,7 @@ export const Container: React.FunctionComponent = () => {
 
     return (
         <div>
-            {isLoading ? null : (
+            {!isLoading && (
                 userData.map((user, index) => {
                     return (
                         <div className={index === current ? 'user active' : 'user'} key={user.id}>

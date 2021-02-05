@@ -6,6 +6,17 @@ body {
 .user {
     opacity: 0;
     transition-duration: 1s ease;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user.active {
@@ -18,7 +29,7 @@ body {
     color: white;
     margin: auto;
     position: absolute;
-    top: 0;
+    top: 80%;
     bottom: 0;
     left: 0;
     right: 0;
