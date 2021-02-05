@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import UserProfile from "./components/UserProfile";
+import User from './types/User'
 
 export default function App() {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<User[]>([]);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,21 +15,21 @@ export default function App() {
     fetchData();
   }, [])
 
-  const userList = data.map((item) => {
-    return (
-      <ul>
-        <li key={item.id}>
-          <p>{item.name}</p>
-          <p>{item.username}</p>
-          <p>{item.email}</p>
-        </li>
-      </ul>
-    )
-  })
+  const handleNextOnClick = () => {
+    const newIndex = index === data.length - 1 ? 0 : index + 1;
+    setIndex(newIndex);
+  }
+
+  const handlePreviousClick = () => {
+    const newIndex = index === 0 ? data.length - 1 : index - 1;
+    setIndex(newIndex);
+  }
 
   return (
     <div>
-      {userList}
+      <button type="button" onClick={handleNextOnClick}>Next</button>
+      <button type="button" onClick={handlePreviousClick}>Previous</button>
+      <UserProfile user={data[index]} />
     </div>
   )
 }
