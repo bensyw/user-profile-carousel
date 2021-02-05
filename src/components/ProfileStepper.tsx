@@ -13,24 +13,27 @@ interface ProfileStepperProps {
 const nextBottonStyle: React.CSSProperties = {
     position: "fixed",
     top: "50%",
-    right: "10%"
+    right: "10%",
+    color: "white"
 };
 
 const backBottonStyle: React.CSSProperties = {
     position: "fixed",
     top: "50%",
-    left: "10%"
+    left: "10%",
+    color: "white"
 };
 
 export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ handleNextOnClick, handleBackOnClick, steps, activeStep }) => {
     return (
         <div>
-            <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick} disabled={activeStep === steps - 1}>
+            {(activeStep === steps - 1) ? null : <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick}>
                 <ArrowForwardIosIcon fontSize="large" style={{ color: "white" }} />
-            </IconButton>
-            <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick} disabled={activeStep === 0}>
+            </IconButton>}
+
+            {(activeStep === 0) ? null : <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick}>
                 <ArrowBackIosIcon fontSize="large" style={{ color: "white" }} />
-            </IconButton>
+            </IconButton>}
         </div>
     )
 }
