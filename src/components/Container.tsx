@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { UserProfile } from "./UserProfile";
 import { ProfileStepper } from "./ProfileStepper"
+import { PageHeader } from "./PageHeader";
 import User from '../types/User';
 import React, { useState, useEffect } from 'react';
 
@@ -32,6 +33,7 @@ export const Container: React.FunctionComponent = () => {
 
     return (
         <div>
+            <PageHeader />
             {!isLoading && (
                 userData.map((user, index) => {
                     return (
