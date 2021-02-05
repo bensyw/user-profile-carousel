@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { UserProfile } from "./UserProfile";
 import { ProfileStepper } from "./ProfileStepper"
+import { PageFooter } from './PageFooter';
 import { PageHeader } from "./PageHeader";
 import User from '../types/User';
 import React, { useState, useEffect } from 'react';
@@ -35,16 +36,18 @@ export const Container: React.FunctionComponent = () => {
         <div>
             <PageHeader />
             {!isLoading && (
-                userData.map((user, index) => {
-                    return (
-                        <div className={index === current ? 'user active' : 'user'} key={user.id}>
-                            {index === current && (<UserProfile user={user} />)}
-                        </div>
-                    )
-                })
+                <>
+                    {userData.map((user, index) => {
+                        return (
+                            <div className={index === current ? 'user active' : 'user'} key={user.id}>
+                                {index === current && (<UserProfile user={user} />)}
+                            </div>
+                        )
+                    })}
+                    <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={userData.length} activeStep={current} />
+                    <PageFooter current={current} length={userData.length} />
+                </>
             )}
-            <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={userData.length} activeStep={current} />
-            <div className="pagination">{`${current + 1} / ${userData.length}`}</div>
         </div>
     );
 }

@@ -31,13 +31,15 @@ const backBottonStyle: React.CSSProperties = {
 export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ handleNextOnClick, handleBackOnClick, steps, activeStep }) => {
     return (
         <div>
-            {(activeStep === steps - 1) ? null : <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick}>
-                <ArrowForwardIosIcon fontSize="large" style={{ color: "white" }} />
-            </IconButton>}
+            {!(activeStep === steps - 1) &&
+                <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick}>
+                    <ArrowForwardIosIcon fontSize="large" style={{ color: "white" }} />
+                </IconButton>}
 
-            {(activeStep === 0) ? null : <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick}>
-                <ArrowBackIosIcon fontSize="large" style={{ color: "white" }} />
-            </IconButton>}
+            {!(activeStep === 0) &&
+                <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick}>
+                    <ArrowBackIosIcon fontSize="large" style={{ color: "white" }} />
+                </IconButton>}
         </div>
     );
 };
