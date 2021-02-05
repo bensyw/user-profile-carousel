@@ -4,23 +4,6 @@ import { ProfileStepper } from "./ProfileStepper"
 import User from '../types/User';
 import React, { useState, useEffect } from 'react';
 
-const stepperStyle: React.CSSProperties = {
-    backgroundColor: "transparent",
-    color: "white",
-    margin: "auto",
-    position: "absolute",
-    top: "0",
-    bottom: "0",
-    left: " 0",
-    right: " 0",
-    width: "100px",
-    height: "50px",
-    textAlign: "center",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-};
-
 
 export const Container: React.FunctionComponent = () => {
 
@@ -59,7 +42,7 @@ export const Container: React.FunctionComponent = () => {
                 })
             )}
             <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={userData.length} activeStep={current} />
-            <div style={stepperStyle}>{`${current + 1} / ${userData.length}`}</div>
+            <div className="pagination">{`${current + 1} / ${userData.length}`}</div>
         </div>
     )
 }
