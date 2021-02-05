@@ -30,7 +30,7 @@ const backBottonStyle: React.CSSProperties = {
 
 export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ handleNextOnClick, handleBackOnClick, current, length }) => {
     return (
-        <div>
+        <>
             {!(current === length - 1) &&
                 <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick}>
                     <ArrowForwardIosIcon fontSize="large" style={{ color: "white" }} />
@@ -40,6 +40,6 @@ export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ h
                 <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick}>
                     <ArrowBackIosIcon fontSize="large" style={{ color: "white" }} />
                 </IconButton>}
-        </div>
+        </>
     );
 };

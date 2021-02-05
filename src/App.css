@@ -1,6 +1,7 @@
 body {
     background-color: #292C35;
     color: white;
+    min-width: min-content;
 }
 
 .user {
@@ -22,6 +23,7 @@ body {
 .user.active {
     opacity: 1;
     transition-duration: 1s;
+    z-index: 1;
 }
 
 .page-footer {
