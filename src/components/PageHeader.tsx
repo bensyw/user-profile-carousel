@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const PageHeader: React.FunctionComponent = () => {
     return (
@@ -9,5 +9,5 @@ export const PageHeader: React.FunctionComponent = () => {
                 <a href="https://github.com/bensyw">Shengyu Wang</a>
             </small>
         </div>
-    )
-}
+    );
+};

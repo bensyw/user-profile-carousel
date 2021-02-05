@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { IconButton } from '@material-ui/core';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -39,5 +39,5 @@ export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ h
                 <ArrowBackIosIcon fontSize="large" style={{ color: "white" }} />
             </IconButton>}
         </div>
-    )
-}
+    );
+};

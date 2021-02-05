@@ -24,12 +24,12 @@ export const Container: React.FunctionComponent = () => {
     const handleNextOnClick = () => {
         const newCurrent = current + 1;
         setCurrent(newCurrent);
-    }
+    };
 
     const handleBackOnClick = () => {
         const newCurrent = current - 1;
         setCurrent(newCurrent);
-    }
+    };
 
     return (
         <div>
@@ -46,5 +46,5 @@ export const Container: React.FunctionComponent = () => {
             <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={userData.length} activeStep={current} />
             <div className="pagination">{`${current + 1} / ${userData.length}`}</div>
         </div>
-    )
+    );
 }
