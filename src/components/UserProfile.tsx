@@ -1,16 +1,32 @@
 import React from 'react'
 import User from '../types/User'
 
-export default function UserProfile(props: { user: User }) {
+interface UserProfileProps {
+    user: User
+}
+
+export const UserProfile: React.FunctionComponent<UserProfileProps> = ({ user }) => {
     return (
         <div>
-            {props.user &&
+            {user &&
                 <ul>
-                    <li key={props.user.id}>
-                        <p>{props.user.name}</p>
-                        <p>{props.user.username}</p>
-                        <p>{props.user.email}</p>
-                    </li>
+                    <li> {user.name} </li>
+                    <li> {user.username} </li>
+                    <li> {user.email} </li>
+                    <li> {`
+                        ${user.address.suite}, 
+                        ${user.address.street}, 
+                        ${user.address.city}, 
+                        ${user.address.zipcode}
+                        `} </li>
+                    <li> {user.phone} </li>
+                    <li> {user.website} </li>
+                    <li> Company </li>
+                    <ul>
+                        <li> {user.company.name} </li>
+                        <li> {user.company.catchPhrase} </li>
+                        <li> {user.company.bs} </li>
+                    </ul>
                 </ul>
             }
         </div>
