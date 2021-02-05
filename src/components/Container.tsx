@@ -44,7 +44,7 @@ export const Container: React.FunctionComponent = () => {
                             </div>
                         )
                     })}
-                    <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={userData.length} activeStep={current} />
+                    <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} current={current} length={userData.length} />
                     <PageFooter current={current} length={userData.length} />
                 </>
             )}

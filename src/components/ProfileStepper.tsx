@@ -6,8 +6,8 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 interface ProfileStepperProps {
     handleNextOnClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
     handleBackOnClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    steps: number;
-    activeStep: number;
+    length: number;
+    current: number;
 };
 
 const nextBottonStyle: React.CSSProperties = {
@@ -28,15 +28,15 @@ const backBottonStyle: React.CSSProperties = {
     msTransform: "-50%",
 };
 
-export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ handleNextOnClick, handleBackOnClick, steps, activeStep }) => {
+export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ handleNextOnClick, handleBackOnClick, current, length }) => {
     return (
         <div>
-            {!(activeStep === steps - 1) &&
+            {!(current === length - 1) &&
                 <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick}>
                     <ArrowForwardIosIcon fontSize="large" style={{ color: "white" }} />
                 </IconButton>}
 
-            {!(activeStep === 0) &&
+            {!(current === 0) &&
                 <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick}>
                     <ArrowBackIosIcon fontSize="large" style={{ color: "white" }} />
                 </IconButton>}
