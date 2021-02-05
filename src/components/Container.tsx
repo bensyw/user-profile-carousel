@@ -4,6 +4,24 @@ import { ProfileStepper } from "./ProfileStepper"
 import User from '../types/User';
 import React, { useState, useEffect } from 'react';
 
+const stepperStyle: React.CSSProperties = {
+    backgroundColor: "transparent",
+    color: "white",
+    margin: "auto",
+    position: "absolute",
+    top: "0",
+    bottom: "0",
+    left: " 0",
+    right: " 0",
+    width: "100px",
+    height: "50px",
+    textAlign: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+};
+
+
 export const Container: React.FunctionComponent = () => {
 
     const [user, setUser] = useState<User[]>([]);
@@ -33,6 +51,7 @@ export const Container: React.FunctionComponent = () => {
         <div>
             {isLoading ? null : <UserProfile user={user[index]} />}
             <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={user.length} activeStep={index} />
+            <div style={stepperStyle}>{`${index + 1} / ${user.length}`}</div>
         </div>
     )
 }
