@@ -24,34 +24,42 @@ const stepperStyle: React.CSSProperties = {
 
 export const Container: React.FunctionComponent = () => {
 
-    const [user, setUser] = useState<User[]>([]);
-    const [index, setIndex] = useState(0);
+    const [userData, setUserData] = useState<User[]>([]);
+    const [current, setCurrent] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchUser = async () => {
             const result = await axios('https://jsonplaceholder.typicode.com/users');
-            setUser(result.data);
+            setUserData(result.data);
             setIsLoading(false);
         }
         fetchUser();
     }, []);
 
     const handleNextOnClick = () => {
-        const newIndex = index + 1;
-        setIndex(newIndex);
+        const newCurrent = current + 1;
+        setCurrent(newCurrent);
     }
 
     const handleBackOnClick = () => {
-        const newIndex = index - 1;
-        setIndex(newIndex);
+        const newCurrent = current - 1;
+        setCurrent(newCurrent);
     }
 
     return (
         <div>
-            {isLoading ? null : <UserProfile user={user[index]} />}
-            <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={user.length} activeStep={index} />
-            <div style={stepperStyle}>{`${index + 1} / ${user.length}`}</div>
+            {isLoading ? null : (
+                userData.map((user, index) => {
+                    return (
+                        <div className={index === current ? 'user active' : 'user'} key={user.id}>
+                            {index === current && (<UserProfile user={user} />)}
+                        </div>
+                    )
+                })
+            )}
+            <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} steps={userData.length} activeStep={current} />
+            <div style={stepperStyle}>{`${current + 1} / ${userData.length}`}</div>
         </div>
     )
 }
