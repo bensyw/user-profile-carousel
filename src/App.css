@@ -12,10 +12,10 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 600px;
+    width: 650px;
     height: 400px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -24,7 +24,7 @@ body {
     transition-duration: 1s;
 }
 
-.pagination {
+.page-footer {
     background-color: transparent;
     color: white;
     margin: auto;

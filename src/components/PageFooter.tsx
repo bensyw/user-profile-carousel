@@ -7,6 +7,6 @@ interface PageFooterProps {
 
 export const PageFooter: React.FunctionComponent<PageFooterProps> = ({ current, length }) => {
     return (
-        <div className="pagination">{`${current + 1} / ${length}`}</div>
+        <div className="page-footer">{`${current + 1} / ${length}`}</div>
     )
 }
