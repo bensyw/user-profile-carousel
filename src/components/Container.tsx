@@ -2,6 +2,7 @@ import axios from 'axios'
 import { UserProfile } from "./UserProfile";
 import User from '../types/User'
 import React, { useState, useEffect } from 'react'
+import { Pagination } from '@material-ui/lab';
 
 export const Container: React.FunctionComponent = () => {
 
@@ -18,21 +19,14 @@ export const Container: React.FunctionComponent = () => {
         fetchUser();
     }, [])
 
-    const handleNextOnClick = () => {
-        const newIndex = index === user.length - 1 ? 0 : index + 1;
-        setIndex(newIndex);
-    }
-
-    const handlePreviousOnClick = () => {
-        const newIndex = index === 0 ? user.length - 1 : index - 1;
-        setIndex(newIndex);
+    const handleChangePage = (event: object, page: number) => {
+        setIndex(page - 1);
     }
 
     return (
         <div>
-            <button type="button" onClick={handleNextOnClick}>Next</button>
-            <button type="button" onClick={handlePreviousOnClick}>Previous</button>
             {isLoading ? null : <UserProfile user={user[index]} />}
+            <Pagination count={user.length} color="primary" showFirstButton showLastButton onChange={handleChangePage} />
         </div>
     )
 }
