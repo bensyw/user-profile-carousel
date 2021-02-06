@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { UserProfile } from "./UserProfile";
+import { Carousel } from "./Carousel";
 import { ProfileStepper } from "./ProfileStepper"
 import { PageFooter } from './PageFooter';
 import { PageHeader } from "./PageHeader";
@@ -37,13 +37,7 @@ export const Container: React.FunctionComponent = () => {
             <PageHeader />
             {!isLoading && (
                 <>
-                    {userData.map((user, index) => {
-                        return (
-                            <div className={index === current ? 'user active' : 'user'} key={user.id}>
-                                {index === current && (<UserProfile user={user} />)}
-                            </div>
-                        )
-                    })}
+                    <Carousel userData={userData} current={current} />
                     <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} current={current} length={userData.length} />
                     <PageFooter current={current} length={userData.length} />
                 </>
