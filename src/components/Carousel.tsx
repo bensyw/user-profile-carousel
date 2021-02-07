@@ -1,6 +1,6 @@
 import React from 'react';
 import User from '../types/User';
-import { UserProfile } from "./UserProfile";
+import { Profile } from "./Profile";
 
 interface CarouselProps {
     userData: User[];
@@ -13,7 +13,7 @@ export const Carousel: React.FunctionComponent<CarouselProps> = ({ userData, cur
             {userData.map((user, index) => {
                 return (
                     <div className={index === current ? 'user active' : 'user'} key={user.id}>
-                        {index === current && (<UserProfile user={user} />)}
+                        {index === current && (<Profile user={user} />)}
                     </div>
                 )
             })}

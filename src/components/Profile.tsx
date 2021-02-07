@@ -1,11 +1,11 @@
 import React from 'react';
 import User from '../types/User';
 
-interface UserProfileProps {
+interface ProfileProps {
     user: User
 };
 
-export const UserProfile: React.FunctionComponent<UserProfileProps> = ({ user }) => {
+export const Profile: React.FunctionComponent<ProfileProps> = ({ user }) => {
     return (
         <>
             <ul>
