@@ -6,7 +6,9 @@ import { PageHeader } from "../PageHeader/PageHeader";
 import User from '../../types/User';
 import React, { useState, useEffect } from 'react';
 
-
+/**
+ * Renders a carousel of user profiles fetched from API
+ */
 export const Container: React.FunctionComponent = () => {
 
     const [userData, setUserData] = useState<User[]>([]);
@@ -22,11 +24,15 @@ export const Container: React.FunctionComponent = () => {
         fetchUser();
     }, []);
 
+    // next button will removed for the last profile
+    // overflow will not occur
     const handleNextOnClick = () => {
         const newCurrent = current + 1;
         setCurrent(newCurrent);
     };
 
+    // back button will removed for the first profile
+    // underflow will not occur
     const handleBackOnClick = () => {
         const newCurrent = current - 1;
         setCurrent(newCurrent);
@@ -35,6 +41,8 @@ export const Container: React.FunctionComponent = () => {
     return (
         <div>
             <PageHeader />
+            {/* Renders loading text while loading
+                Renders a carousel of profiles after the loading is finished*/}
             {isLoading ? <b className="loading-text">Loading...</b> : (
                 <>
                     <ProfileCarousel userData={userData} current={current} />
