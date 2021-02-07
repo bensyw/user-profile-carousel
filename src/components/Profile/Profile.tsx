@@ -10,22 +10,23 @@ export const Profile: React.FunctionComponent<ProfileProps> = ({ user }) => {
         <>
             <b>User Profile</b>
             <ul>
-                <li> {user.name} </li>
-                <li> {user.username} </li>
-                <li> {user.email} </li>
-                <li> {`
+                <li> <b>Name: </b> {user.name} </li>
+                <li> <b>Username: </b> {user.username} </li>
+                <li> <b>Email: </b> {user.email} </li>
+                <li> <b>Address: </b>
+                    {`
                         ${user.address.suite}, 
                         ${user.address.street}, 
                         ${user.address.city}, 
                         ${user.address.zipcode}
                         `} </li>
-                <li> {user.phone} </li>
-                <li> {user.website} </li>
-                <li> Company </li>
+                <li> <b>Phone: </b> {user.phone} </li>
+                <li> <b>Website: </b> {user.website} </li>
+                <li> <b>Company: </b> </li>
                 <ul>
-                    <li> {user.company.name} </li>
-                    <li> {user.company.catchPhrase} </li>
-                    <li> {user.company.bs} </li>
+                    <li> <b>Name: </b> {user.company.name} </li>
+                    <li> <b>Catch Phrase: </b> {user.company.catchPhrase} </li>
+                    <li> <b>Buzzword: </b> {user.company.bs} </li>
                 </ul>
             </ul>
         </>

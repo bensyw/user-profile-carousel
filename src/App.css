@@ -27,6 +27,11 @@ body {
     z-index: 1;
 }
 
+.user ul {
+    list-style-type: none;
+    align-self: flex-start;
+}
+
 .page-footer {
     background-color: transparent;
     color: white;
