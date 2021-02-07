@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Carousel } from "./Carousel";
+import { ProfileCarousel } from "./ProfileCarousel";
 import { ProfileStepper } from "./ProfileStepper"
 import { PageFooter } from './PageFooter';
 import { PageHeader } from "./PageHeader";
@@ -37,7 +37,7 @@ export const Container: React.FunctionComponent = () => {
             <PageHeader />
             {!isLoading && (
                 <>
-                    <Carousel userData={userData} current={current} />
+                    <ProfileCarousel userData={userData} current={current} />
                     <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} current={current} length={userData.length} />
                     <PageFooter current={current} length={userData.length} />
                 </>

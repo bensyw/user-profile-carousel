@@ -2,12 +2,12 @@ import React from 'react';
 import User from '../types/User';
 import { Profile } from "./Profile";
 
-interface CarouselProps {
+interface ProfileCarouselProps {
     userData: User[];
     current: number;
 };
 
-export const Carousel: React.FunctionComponent<CarouselProps> = ({ userData, current }) => {
+export const ProfileCarousel: React.FunctionComponent<ProfileCarouselProps> = ({ userData, current }) => {
     return (
         <>
             {userData.map((user, index) => {
