@@ -8,6 +8,7 @@ interface ProfileProps {
 export const Profile: React.FunctionComponent<ProfileProps> = ({ user }) => {
     return (
         <>
+            <b>User Profile</b>
             <ul>
                 <li> {user.name} </li>
                 <li> {user.username} </li>
