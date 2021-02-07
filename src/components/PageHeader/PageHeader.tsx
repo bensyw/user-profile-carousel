@@ -9,7 +9,7 @@ export const PageHeader: React.FunctionComponent = () => {
             <h1>CODER ONE</h1>
             <h2>PROGRAMMING TASK</h2>
             <small><span>BUILD BY </span>
-                <a href="https://github.com/bensyw">Shengyu Wang</a>
+                <a href="https://www.linkedin.com/in/shengyu-benjamin-wang/">Shengyu Wang</a>
             </small>
         </div>
     );

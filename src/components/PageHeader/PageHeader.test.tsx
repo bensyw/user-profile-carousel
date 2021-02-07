@@ -12,5 +12,5 @@ test('should display header text', () => {
 
 test('should navigate to github page when clicked', () => {
     render(<PageHeader />);
-    expect(screen.getByText(/Shengyu Wang/i).closest('a')).toHaveAttribute('href', 'https://github.com/bensyw')
+    expect(screen.getByText(/Shengyu Wang/i).closest('a')).toHaveAttribute('href', 'https://www.linkedin.com/in/shengyu-benjamin-wang/')
 });
