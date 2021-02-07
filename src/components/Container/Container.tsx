@@ -5,6 +5,7 @@ import { PageFooter } from '../PageFooter/PageFooter';
 import { PageHeader } from "../PageHeader/PageHeader";
 import User from '../../types/User';
 import React, { useState, useEffect } from 'react';
+import './Container.css'
 
 /**
  * Renders a carousel of user profiles fetched from API
