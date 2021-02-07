@@ -4,6 +4,21 @@ body {
     min-width: min-content;
 }
 
+.loading-text {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 650px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .user {
     opacity: 0;
     transition-duration: 1s ease;

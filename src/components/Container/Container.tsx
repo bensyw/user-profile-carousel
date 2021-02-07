@@ -35,7 +35,7 @@ export const Container: React.FunctionComponent = () => {
     return (
         <div>
             <PageHeader />
-            {!isLoading && (
+            {isLoading ? <b className="loading-text">Loading...</b> : (
                 <>
                     <ProfileCarousel userData={userData} current={current} />
                     <ProfileStepper handleNextOnClick={handleNextOnClick} handleBackOnClick={handleBackOnClick} current={current} length={userData.length} />
