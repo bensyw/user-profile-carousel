@@ -1,0 +1,4 @@
+.user ul {
+    list-style-type: none;
+    align-self: flex-start;
+}
