@@ -10,6 +10,7 @@ interface ProfileStepperProps {
     current: number;
 };
 
+// Inline styling of Material-UI component
 const nextBottonStyle: React.CSSProperties = {
     position: "absolute",
     top: "50%",
@@ -28,9 +29,13 @@ const backBottonStyle: React.CSSProperties = {
     msTransform: "-50%",
 };
 
+/**
+ * Renders back and next button to step backward or forward the profile to be displayed
+ */
 export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ handleNextOnClick, handleBackOnClick, current, length }) => {
     return (
         <>
+            {/*Render the next button unless it reaches the last profile*/}
             {!(current === length - 1) &&
                 <div data-testid="next-btn">
                     <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick}>
@@ -38,6 +43,7 @@ export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ h
                     </IconButton>
                 </div>
             }
+            {/*Render the back button unless it reaches the first profile*/}
             {!(current === 0) &&
                 <div data-testid="back-btn">
                     <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick}>

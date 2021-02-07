@@ -5,6 +5,9 @@ interface ProfileProps {
     user: User
 };
 
+/**
+ * Renders a single user profile
+ */
 export const Profile: React.FunctionComponent<ProfileProps> = ({ user }) => {
     return (
         <>

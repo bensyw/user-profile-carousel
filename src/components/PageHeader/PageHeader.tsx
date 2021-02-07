@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * Renders heading text
+ */
 export const PageHeader: React.FunctionComponent = () => {
     return (
         <div className="page-header">
