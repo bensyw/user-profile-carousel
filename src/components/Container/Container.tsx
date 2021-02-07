@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { ProfileCarousel } from "../ProfileCarousel/ProfileCarousel";
-import { ProfileStepper } from "../ProfileStepper/ProfileStepper"
-import { PageFooter } from '../PageFooter/PageFooter';
-import { PageHeader } from "../PageHeader/PageHeader";
+import { ProfileCarousel } from "../ProfileCarousel";
+import { ProfileStepper } from "../ProfileStepper"
+import { PageFooter } from '../PageFooter';
+import { PageHeader } from "../PageHeader";
 import User from '../../types/User';
 import React, { useState, useEffect } from 'react';
 

@@ -1,0 +1,1 @@
+export { ProfileCarousel } from './ProfileCarousel'
