@@ -32,14 +32,19 @@ export const ProfileStepper: React.FunctionComponent<ProfileStepperProps> = ({ h
     return (
         <>
             {!(current === length - 1) &&
-                <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick}>
-                    <ArrowForwardIosIcon fontSize="large" style={{ color: "white" }} />
-                </IconButton>}
-
+                <div data-testid="next-btn">
+                    <IconButton style={nextBottonStyle} size="medium" onClick={handleNextOnClick}>
+                        <ArrowForwardIosIcon fontSize="large" style={{ color: "white" }} />
+                    </IconButton>
+                </div>
+            }
             {!(current === 0) &&
-                <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick}>
-                    <ArrowBackIosIcon fontSize="large" style={{ color: "white" }} />
-                </IconButton>}
+                <div data-testid="back-btn">
+                    <IconButton style={backBottonStyle} size="medium" onClick={handleBackOnClick}>
+                        <ArrowBackIosIcon fontSize="large" style={{ color: "white" }} />
+                    </IconButton>
+                </div>
+            }
         </>
     );
 };
