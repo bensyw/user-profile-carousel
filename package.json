@@ -47,7 +47,9 @@
     "collectCoverageFrom": [
       "src/components/**/*.{js,jsx,ts,tsx}",
       "src/App.{js,jsx,ts,tsx}",
-      "!src/index.{js,jsx,ts,tsx}"
+      "!src/index.{js,jsx,ts,tsx}",
+      "!src/**/index.{js,jsx,ts,tsx}",
+      "!src/**/**/index.{js,jsx,ts,tsx}"
     ]
   }
 }
