@@ -1,6 +1,6 @@
 import React from 'react';
-import User from '../types/User';
-import { Profile } from "./Profile";
+import User from '../../types/User';
+import { Profile } from "../Profile/Profile";
 
 interface ProfileCarouselProps {
     userData: User[];
