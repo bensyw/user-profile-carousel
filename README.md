@@ -1,15 +1,16 @@
-# CODER ONE Interview
+# User Profile Carousel
 
-This project is built for the programming challenge, written in TypeScript.
+This project is a user profile viewer with carousel effects. Testing with 100% test coverage is provided.
+
 ## Project Description
  The react app fetches user data from the JSONplaceholder API and displays a single profile in a carousel. The profile can be navigated by the back and next buttons on the sides of the page. The current profile number and the total number of profiles are displayed in the footer.
  
-**What makes my project stand out**
+**Tech Stack**
 
-- Written in TypeScript
-- Unit Tests / Integration Tests
-- Git History
-- Documentation
+- React
+- TypsScript
+- React Testing Library
+- Material UI
 
 ## Available Scripts
 
