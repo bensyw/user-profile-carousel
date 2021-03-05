@@ -4,9 +4,9 @@ import { PageHeader } from './PageHeader';
 
 test('should display header text', () => {
     render(<PageHeader />);
-    expect(screen.getByText(/CODER ONE/i)).toBeInTheDocument();
-    expect(screen.getByText(/PROGRAMMING TASK/i)).toBeInTheDocument();
-    expect(screen.getByText(/BUILD BY/i)).toBeInTheDocument();
+    expect(screen.getByText(/User Profile Carousel/i)).toBeInTheDocument();
+    expect(screen.getByText(/Unit Testing with High Test Coverage/i)).toBeInTheDocument();
+    expect(screen.getByText(/Build by/i)).toBeInTheDocument();
     expect(screen.getByText(/Shengyu Wang/i)).toBeInTheDocument();
 });
 
